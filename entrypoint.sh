@@ -32,6 +32,9 @@ latexmk_shell_escape="${12}"
 latexmk_use_lualatex="${13}"
 latexmk_use_xelatex="${14}"
 
+# Add symbolic link to the custom tex classes stored under the /root user
+ln -s /root/texmf ~/texmf
+
 # Check kpsewhich var location, if it exists
 info "kpsewhich -var-value TEXMFHOME: $(kpsewhich -var-value TEXMFHOME)"
 info "content of kpsewhich: $(ls $(kpsewhich -var-value TEXMFHOME)/tex/latex)"
