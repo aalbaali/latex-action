@@ -34,6 +34,7 @@ latexmk_use_xelatex="${14}"
 
 # Check kpsewhich var location, if it exists
 info "kpsewhich -var-value TEXMFHOME: $(kpsewhich -var-value TEXMFHOME)"
+info "content of kpsewhich: $(ls $(kpsewhich -var-value TEXMFHOME)/tex/latex)"
 
 if [[ -z "$root_file" ]]; then
   error "Input 'root_file' is missing."
