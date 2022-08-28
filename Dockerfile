@@ -2,9 +2,6 @@ FROM aalbaali/latex:full
 
 RUN sudo sudo apt-get update -y \
         && sudo apt-get install -y \
-            zathura      \
-            okular       \
-            mupdf        \
             xdotool
 
 # Install the custom classes
