@@ -12,6 +12,8 @@ RUN mkdir -p /tmp/custom_latex \
     && chmod +x install_tex.sh \
     && ./install_tex.sh
 
+RUN ln -s /root/texmf /github/home/texmf
+
 COPY \
   LICENSE \
   README.md \
