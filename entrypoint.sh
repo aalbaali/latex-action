@@ -32,6 +32,9 @@ latexmk_shell_escape="${12}"
 latexmk_use_lualatex="${13}"
 latexmk_use_xelatex="${14}"
 
+# Check kpsewhich var location, if it exists
+info "kpsewhich -var-value TEXMFHOME: $(kpsewhich -var-value TEXMFHOME)"
+
 if [[ -z "$root_file" ]]; then
   error "Input 'root_file' is missing."
 fi
