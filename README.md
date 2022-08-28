@@ -16,7 +16,7 @@ Each input is provided as a key inside the `with` section of the action.
 
     The root LaTeX file to be compiled. This input is required. You can also pass multiple files as a multi-line string to compile multiple documents. For example:
     ```yaml
-    - uses: aalbaali/latex-action@v2
+    - uses: aalbaali/latex-action@v1
       with:
         root_file: |
           file1.tex
@@ -27,7 +27,7 @@ Each input is provided as a key inside the `with` section of the action.
 
     If set, interpret the `root_file` input as bash glob pattern. For example:
     ```yaml
-    - uses: aalbaali/latex-action@v2
+    - uses: aalbaali/latex-action@v1
       with:
         root_file: "*.tex"
         glob_root_file: true
@@ -57,7 +57,7 @@ Each input is provided as a key inside the `with` section of the action.
 
     Install extra `.ttf`/`.otf` fonts to be used by `fontspec`. You can also pass multiple files as a multi-line string. Each file path will be interpreted as glob pattern. For example:
     ```yaml
-    - uses: aalbaali/latex-action@v2
+    - uses: aalbaali/latex-action@v1
       with:
         root_file: main.tex
         extra_fonts: |
@@ -99,7 +99,7 @@ jobs:
       - name: Set up Git repository
         uses: actions/checkout@v2
       - name: Compile LaTeX document
-        uses: aalbaali/latex-action@v2
+        uses: aalbaali/latex-action@v1
         with:
           root_file: main.tex
 ```
@@ -111,14 +111,14 @@ jobs:
 By default, this action uses pdfLaTeX. If you want to use XeLaTeX or LuaLaTeX, you can set the `latexmk_use_xelatex` or `latexmk_use_lualatex` input respectively. For example:
 
 ```yaml
-- uses: aalbaali/latex-action@v2
+- uses: aalbaali/latex-action@v1
   with:
     root_file: main.tex
     latexmk_use_xelatex: true
 ```
 
 ```yaml
-- uses: aalbaali/latex-action@v2
+- uses: aalbaali/latex-action@v1
   with:
     root_file: main.tex
     latexmk_use_lualatex: true
@@ -131,7 +131,7 @@ Alternatively, you could create a `.latexmkrc` file. Refer to the [`latexmk` doc
 To enable `--shell-escape`, set the `latexmk_shell_escape` input.
 
 ```yaml
-- uses: aalbaali/latex-action@v2
+- uses: aalbaali/latex-action@v1
   with:
     root_file: main.tex
     latexmk_shell_escape: true
@@ -163,7 +163,7 @@ Sometimes you may have custom package (`.sty`) or class (`.cls`) files in other 
   run: |
     curl -OL https://example.com/custom_template.zip
     unzip custom_template.zip
-- uses: aalbaali/latex-action@v2
+- uses: aalbaali/latex-action@v1
   with:
     root_file: main.tex
   env:
